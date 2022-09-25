@@ -8,7 +8,7 @@ public class Producto {
 	private String descripcion;
 	private String oferta;
 	private String descuento;
-	private int categoria;
+	private String categoria;
 	private String imagen="no-image.png";
 	private Integer disponible;
 	private Integer New;
@@ -52,10 +52,10 @@ public class Producto {
 	public void setDescuento(String descuento) {
 		this.descuento = descuento;
 	}
-	public int getCategoria() {
+	public String getCategoria() {
 		return categoria;
 	}
-	public void setCategoria(int categoria) {
+	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
 	public String getImagen() {

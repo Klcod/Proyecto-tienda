@@ -12,7 +12,7 @@
 	<table class="table table-bordered table-hover">
   <tr>
     <th>Id</th>
-     <th>Img. del producto</th>
+    <th>Img. del producto</th>
     <th>Nombre del producto</th>
     <th>Precio</th>
     <th>Descripcion</th>
@@ -21,6 +21,8 @@
     <th>Categoria</th>
     <th>Disponible</th>
     <th>Producto Nuevo</th>
+    <th>Detalle</th>
+    <th>Borrar</th>
   </tr>
   <tr th:each="producto : ${producto}">
     <td th:text="${producto.id}"></td>
@@ -41,6 +43,13 @@
     <td>
     <span th:if="${producto.New==1}" class="badge bg-success">Si</span>
     <span th:unless="${producto.New==1}" class="badge bg-danger">No</span>
+    </td>
+    <td>
+    <a th:href="@{/productos/view/{id} (id=${producto.id}) }" class="btn btn-success">Detalle</a>
+    </td>
+    <td>
+    <a th:href="@{/productos/delete(id=${producto.id}) }" class="btn btn-danger">Borrar</a>
+    </td>
     
   </tr>
 </table>
