@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Listado de los productos</title>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+	<h1 class="text-light bg-dark">Listado de los productos ELECTRO</h1>
+	
+	<table class="table table-bordered table-hover">
+  <tr>
+    <th>Id</th>
+     <th>Img. del producto</th>
+    <th>Nombre del producto</th>
+    <th>Precio</th>
+    <th>Descripcion</th>
+    <th>Descuento</th>
+    <th>Oferta</th>
+    <th>Categoria</th>
+    <th>Disponible</th>
+    <th>Producto Nuevo</th>
+  </tr>
+  <tr th:each="producto : ${producto}">
+    <td th:text="${producto.id}"></td>
+    </td>
+    <td>
+  	<img th:src="@{/images/{img} (img=${producto.imagen} ) }" width="136" height="136" >
+  	</td>
+    <td th:text="${producto.nombre}"></td>
+    <td th:text="${producto.precio}"></td>
+    <td th:text="${producto.descripcion}"></td>
+    <td th:text="${producto.descuento}"></td>
+    <td th:text="${producto.oferta}"></td>
+    <td th:text="${producto.categoria}"></td>
+    <td>
+    <span th:if="${producto.disponible==1}" class="badge bg-success">Si</span>
+    <span th:unless="${producto.disponible==1}" class="badge bg-danger">No</span>
+    </td>
+    <td>
+    <span th:if="${producto.New==1}" class="badge bg-success">Si</span>
+    <span th:unless="${producto.New==1}" class="badge bg-danger">No</span>
+    
+  </tr>
+</table>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
