@@ -69,11 +69,16 @@
 							</div>
 						</div>
 						<!-- /LOGO -->
-
+ 
+ 
+ 
+ 
+ 
+ 
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form>
+								<form th:action="@{/}">
 									<select class="input-select">
 										<option value="0">All Categories</option>
 										<option value="1">Category 01</option>
@@ -85,6 +90,13 @@
 							</div>
 						</div>
 						<!-- /SEARCH BAR -->
+
+
+
+
+
+
+
 
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
@@ -177,6 +189,7 @@
 						<li><a href="#">Smartphones</a></li>
 						<li><a href="#">Cameras</a></li>
 						<li><a href="#">Accessories</a></li>
+						<li><a th:href="@{/categorias/create}">Nuevo Producto</a></li>
 					</ul>
 					<!-- /NAV -->
 				</div>
