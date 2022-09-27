@@ -1,7 +1,7 @@
 	package net.itinajero.service;
 
-import java.text.ParseException;  
-import java.text.SimpleDateFormat;
+//import java.text.ParseException;  
+//import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -70,7 +70,7 @@ public ProductoServiceImpl() {
 		producto4.setDisponible(1);
 		producto4.setNew(1);
 		
-		//Creamos el producto 4
+		//Creamos el producto 5
 		Producto producto5 = new Producto();
 		producto5.setId(5);
 		producto5.setNombre("Jabra Elite Sport");
@@ -135,6 +135,95 @@ public ProductoServiceImpl() {
 		producto9.setDisponible(0);
 		producto9.setNew(1);
 		
+		
+		//Creamos el producto 10
+	   Producto producto10 = new Producto();
+	   producto10.setId(10);
+	   producto10.setNombre("MacBook Pro de 14 pulgadas");
+	   producto10.setDescripcion("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
+	   producto10.setPrecio(917300.0);
+	   producto10.setDescuento("8%");
+	   producto10.setCategoria("laptop");
+	   producto10.setOferta("10");
+	   producto10.setImagen("product10.png");
+	   producto10.setDisponible(0);
+	   producto10.setNew(1);
+				
+				
+	   //Creamos el producto 11
+	   Producto producto11 = new Producto();
+	   producto11.setId(11);
+	   producto11.setNombre("IPhone 13 Pro Max");
+	   producto11.setDescripcion("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
+	   producto11.setPrecio(23000.0);
+	   producto11.setDescuento("8%");
+	   producto11.setCategoria("celular");
+	   producto11.setOferta("11");
+	   producto11.setImagen("product11.png");
+	   producto11.setDisponible(0);
+	   producto11.setNew(1);
+							
+							
+	   //Creamos el producto 12
+	   Producto producto12 = new Producto();
+	   producto12.setId(12);
+	   producto12.setNombre("Sony Audífonos inalámbricos WH-CH510");
+	   producto12.setDescripcion("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
+	   producto12.setPrecio(917300.0);
+	   producto12.setDescuento("17%");
+	   producto12.setCategoria("Audifonos");
+	   producto12.setOferta("12");
+	   producto12.setImagen("product12.png");
+	   producto12.setDisponible(0);
+	   producto12.setNew(1);
+										
+										
+										
+	  //Creamos el producto 13
+	   Producto producto13 = new Producto();
+	   producto13.setId(13);
+	   producto13.setNombre("CANON EOS 4000D");
+	   producto13.setDescripcion("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
+	   producto13.setPrecio(917300.0);
+	   producto13.setDescuento("8%");
+	   producto13.setCategoria("camara");
+	   producto13.setOferta("13");
+	   producto13.setImagen("product13.png");
+	   producto13.setDisponible(0);
+	   producto13.setNew(1);
+		
+	   
+	 //Creamos el producto 14
+	   Producto producto14 = new Producto();
+	   producto14.setId(14);
+	   producto14.setNombre("NIKON D750");
+	   producto14.setDescripcion("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
+	   producto14.setPrecio(27000.0);
+	   producto14.setDescuento("8%");
+	   producto14.setCategoria("camara");
+	   producto14.setOferta("14");
+	   producto14.setImagen("product14.png");
+	   producto14.setDisponible(0);
+	   producto14.setNew(1);
+		
+	   
+	 //Creamos el producto 15
+	   Producto producto15 = new Producto();
+	   producto15.setId(15);
+	   producto15.setNombre("Samsung Galaxy S22 Ultra");
+	   producto15.setDescripcion("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
+	   producto15.setPrecio(917300.0);
+	   producto15.setDescuento("9%");
+	   producto15.setCategoria("celular");
+	   producto15.setOferta("15");
+	   producto15.setImagen("product15.png");
+	   producto15.setDisponible(0);
+	   producto15.setNew(1);
+		
+	   
+	   
+	   
+	   
 		/**
 		 * Agregamos los 4 objetos de tipo Vacante a la lista ...
 		 */
@@ -147,6 +236,13 @@ public ProductoServiceImpl() {
 		lista.add(producto7);
 		lista.add(producto8);
 		lista.add(producto9);
+		lista.add(producto10);
+		lista.add(producto11);
+		lista.add(producto12);
+		lista.add(producto13);
+		lista.add(producto14);
+		lista.add(producto15);
+		
      
 }
 public List<Producto> buscarTodas() {
