@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmls:th="http://www.thymeleaf.org">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,8 +37,8 @@
     </head>
 	<body>
 		<!-- HEADER -->
-		<header th:insert="fragments/header">
-	
+		<header th:insert="fragments/header :: menu-principal">
+		
 		</header>
 		<!-- /HEADER -->
 
@@ -50,13 +50,10 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="/">Home</a></li>
-						<li><a th:href="@{/hotdeals}">Hot Deals</a></li>
-						<li><a th:href="@{/categories}">Categories</a></li>
-						<li><a th:href="@{/laptobs}">Laptops</a></li>
-						<li><a th:href="@{/smartphones}">Smartphones</a></li>
-						<li><a th:href="@{/cameras}">Cameras</a></li>
-						<li><a th:href="@{/accessories}">Accessories</a></li>
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#">Hot Deals</a></li>
+						<li><a th:href="@{/categorias/listCategorias}">Categorias</a></li>
+						<li><a th:href="@{/productos/listProduc}">Productos</a></li>
 					</ul>
 					<!-- /NAV -->
 				</div>
@@ -79,8 +76,8 @@
 								<img src="./img/shop01.png" alt="">
 							</div>
 							<div class="shop-body">
-								<h3>Laptop<br>Collection</h3>
-								<a th:href="@{/laptobs}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<h3>Laptop<br></h3>
+								<a href="/store" class="cta-btn">comprar ahora <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -93,8 +90,8 @@
 								<img src="./img/shop03.png" alt="">
 							</div>
 							<div class="shop-body">
-								<h3>Accessories<br>Collection</h3>
-								<a th:href="@{/accessories}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<h3>Audifonos<br></h3>
+								<a href="/store" class="cta-btn">comprar  ahora <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -107,12 +104,25 @@
 								<img src="./img/shop02.png" alt="">
 							</div>
 							<div class="shop-body">
-								<h3>Cameras<br>Collection</h3>
-								<a th:href="@{/cameras}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<h3>Camaras<br></h3>
+								<a href="/store" class="cta-btn">comprar ahora <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
 					<!-- /shop -->
+					<div class="col-md-4 col-xs-6">
+						<div class="shop">
+							<div class="shop-img">
+								<img src="./img/shop04.png" alt="">
+							</div>
+							<div class="shop-body">
+								<h3>Celulares<br></h3>
+								<a href="/store" class="cta-btn">comprar ahora <i class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</div>
+					</div>
+					
+					
 				</div>
 				<!-- /row -->
 			</div>
@@ -161,7 +171,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -192,7 +202,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -223,7 +233,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 												</div>
@@ -246,7 +256,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -274,7 +284,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -345,7 +355,7 @@
 							</ul>
 							<h2 class="text-uppercase">hot deal this week</h2>
 							<p>New Collection Up to 50% OFF</p>
-							<a class="primary-btn cta-btn" th:href="@{/hotdeals}">Shop now</a>
+							<a class="primary-btn cta-btn" href="/store">Shop now</a>
 						</div>
 					</div>
 				</div>
@@ -396,7 +406,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a th:href="@{/store}">product name goes here</a></h3>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -427,7 +437,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a  th:href="@{/product}">product name goes here</a></h3>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -458,7 +468,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a  th:href="@{/product}">product name goes here</a></h3>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 												</div>
@@ -481,7 +491,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a  th:href="@{/product}">product name goes here</a></h3>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -509,7 +519,7 @@
 											</div>
 											<div class="product-body">
 												<p class="product-category">Category</p>
-												<h3 class="product-name"><a  th:href="@{/product}">product name goes here</a></h3>
+												<h3 class="product-name"><a href="#">product name goes here</a></h3>
 												<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
@@ -567,7 +577,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -580,7 +590,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -593,7 +603,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -608,7 +618,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -621,7 +631,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -634,7 +644,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -660,7 +670,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -673,7 +683,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -686,7 +696,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -701,7 +711,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -714,7 +724,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -727,7 +737,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -755,7 +765,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -768,7 +778,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -781,7 +791,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -796,7 +806,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -809,7 +819,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -822,7 +832,7 @@
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a th:href="@{/product}">product name goes here</a></h3>
+										<h3 class="product-name"><a href="#">product name goes here</a></h3>
 										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
 									</div>
 								</div>
@@ -853,16 +863,16 @@
 							</form>
 							<ul class="newsletter-follow">
 								<li>
-									<a href="https://www.youtube.com/watch?v=mCdA4bJAGGk&ab_channel=sweetblue."><i class="fa fa-facebook"></i></a>
+									<a href="#"><i class="fa fa-facebook"></i></a>
 								</li>
 								<li>
-									<a href="https://www.youtube.com/watch?v=mCdA4bJAGGk&ab_channel=sweetblue."><i class="fa fa-twitter"></i></a>
+									<a href="#"><i class="fa fa-twitter"></i></a>
 								</li>
 								<li>
-									<a href="https://www.youtube.com/watch?v=mCdA4bJAGGk&ab_channel=sweetblue."><i class="fa fa-instagram"></i></a>
+									<a href="#"><i class="fa fa-instagram"></i></a>
 								</li>
 								<li>
-									<a href="https://www.youtube.com/watch?v=mCdA4bJAGGk&ab_channel=sweetblue."><i class="fa fa-pinterest"></i></a>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
 								</li>
 							</ul>
 						</div>
@@ -875,98 +885,8 @@
 		<!-- /NEWSLETTER -->
 
 		<!-- FOOTER -->
-		<footer id="footer">
+		<footer id="footer" th:insert="fragments/footer :: pie-pagina">
 			<!-- top footer -->
-			<div class="section">
-				<!-- container -->
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">About Us</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
-								<ul class="footer-links">
-									<li><a th:href="@{/acerca}"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-									<li><a th:href="@{/acerca}"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-									<li><a th:href="@{/acerca}"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Categories</h3>
-								<ul class="footer-links">
-									<li><a th:href="@{/hotdeals}">Hot deals</a></li>
-									<li><a th:href="@{/laptobs}">Laptops</a></li>
-									<li><a th:href="@{/smartphones}">Smartphones</a></li>
-									<li><a th:href="@{/cameras}">Cameras</a></li>
-									<li><a th:href="@{/accessories}">Accessories</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="clearfix visible-xs"></div>
-
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Information</h3>
-								<ul class="footer-links">
-									<li><a th:href="@{/acerca}">About Us</a></li>
-									<li><a th:href="@{/contacto}">Contact Us</a></li>
-									<li><a th:href="@{/acerca}">Privacy Policy</a></li>
-									<li><a th:href="@{/acerca}">Orders and Returns</a></li>
-									<li><a th:href="@{/acerca}">Terms & Conditions</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Service</h3>
-								<ul class="footer-links">
-									<li><a th:href="@{/micuenta}">My Account</a></li>
-									<li><a th:href="@{/carro}">View Cart</a></li>
-									<li><a th:href="@{/deseos}">Wishlist</a></li>
-									<li><a th:href="@{/checkout}">Track My Order</a></li>
-									<li><a href="#">Help</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /row -->
-				</div>
-				<!-- /container -->
-			</div>
-			<!-- /top footer -->
-
-			<!-- bottom footer -->
-			<div id="bottom-footer" class="section">
-				<div class="container">
-					<!-- row -->
-					<div class="row">
-						<div class="col-md-12 text-center">
-							<ul class="footer-payments">
-								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-							</ul>
-							<span class="copyright">
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</span>
-						</div>
-					</div>
-						<!-- /row -->
-				</div>
-				<!-- /container -->
-			</div>
-			<!-- /bottom footer -->
 		</footer>
 		<!-- /FOOTER -->
 
