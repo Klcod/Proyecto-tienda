@@ -1,7 +1,8 @@
 package net.itinajero.controller;
 
-import java.sql.Date;
+
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import net.itinajero.model.Producto;
+
 import net.itinajero.service.ICategoriaService;
 import net.itinajero.service.IProductoService;
 
@@ -61,7 +63,7 @@ public class ProductoController {
 			serviceProducto.guardar(producto);
 			attributes.addFlashAttribute("msg", "Registro Guardado");
 			System.out.println("Producto: " + producto);
-			return "productos/listProduc";
+			return "redirect:/productos/index";
 		}
 	
 			
@@ -74,6 +76,10 @@ public class ProductoController {
 			
 			
 
+			
+		
+			
+			
 			@GetMapping("/delete")
 			public String eliminar (@RequestParam("id") int idProductos, Model model) {
 				System.out.println("Borrando producto con ID: " + idProductos);
@@ -91,6 +97,14 @@ public class ProductoController {
 				return "detalle";
 			}
 	
+			
+			@InitBinder
+			public void initBinder(WebDataBinder webDataBinder) {
+				SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+				webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+			}
+			
+			
 	
 	
 }

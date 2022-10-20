@@ -1,5 +1,7 @@
 	package net.itinajero.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 //import java.text.ParseException;  
 //import java.text.SimpleDateFormat;
 import java.util.LinkedList;
@@ -15,9 +17,10 @@ public class  ProductoServiceImpl implements IProductoService{
 private List<Producto> lista = null;
 	
 public ProductoServiceImpl() {
-   
+    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 	lista = new LinkedList<Producto>();
 	
+		
 	//Creamos el producto 1
 	Producto producto1 = new Producto();
 	producto1.setId(1);
@@ -242,26 +245,26 @@ public ProductoServiceImpl() {
 		lista.add(producto13);
 		lista.add(producto14);
 		lista.add(producto15);
-		
-     
-}
-public List<Producto> buscarTodas() {
-	return lista;
-}
-
-public Producto buscarPorId(Integer idProducto) {
-for(Producto v : lista) {
-	if(v.getId()==idProducto) {
-		return v;
-	}
-}
-
-return null;
-}
-@Override
-public void guardar(Producto producto) {
-	lista.add(producto);
 	
 }
+		public List<Producto> buscarTodas() {
+			return lista;
+		}
+		
+		public Producto buscarPorId(Integer idProducto) {
+		
+		for(Producto v : lista) {
+			if(v.getId()==idProducto) {
+				return v;
+			}
+		}
+		
+		return null;
+	}
+		@Override
+		public void guardar(Producto producto) {
+			lista.add(producto);
+			
+		}
 
 }

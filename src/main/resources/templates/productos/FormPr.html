@@ -62,8 +62,8 @@
                 </div>
                 <div class="col-md-3"> 
                  <div class="form-group">
-                    <label for="oferta">Precio de la oferta</label>
-                    <input type="text" class="form-control" name="oferta"  th:field="*{oferta}"  id="oferta" placeholder="Oferta" required="required">
+                    <label for="oferta">Descuento</label>
+                    <input type="text" class="form-control" name="descuento"  th:field="*{descuento}"  id="descuento" placeholder="descuento" required="required">
                   </div>
                 </div>   
                 
@@ -92,33 +92,29 @@
                   </div>
                 </div>
 
-                <div class="col-md-3"> 
-                  <div class="form-group">
-                    <label for="estatus">Estatus</label>
-                    <select class="form-control" name="estatus" id="estatus">
-					  <option value="Creada">Creada</option>
-                      <option value="Aprobada">Aprobada</option>
-                      <option value="Eliminada">Eliminada</option>	
-                    </select>
-                  </div>
-                </div>
+              
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="fecha">Fecha de Publicacion</label>
                     <input type="text" class="form-control"  th:field="*{fecha}"  name="fecha" id="fecha" placeholder="Fecha de publicacion" required="required">
                   </div>  
                 </div>
+                
+                
+                
+                
+                
+                 </div>    
+              <div class="row">
                 <div class="col-md-3"> 
-                  <div class="form-check">
-                    <label class="form-check-label" for="destacado0"></label><br>
-                    <input class="form-check-input" type="radio" name="destacado" id="oferta" value="1" checked="checked">
-                    <label class="form-check-label" for="oferta1">Oferta</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="destacado" id="oferta" value="0">
-                    <label class="form-check-label" for="oferta2">No en oferta</label>
+                  <div class="form-group">
+                    <label for="salario">Oferta</label>
+                    <input type="text" class="form-control"  th:field="*{oferta}" name="precio" id="oferta" placeholder="oferta" required="required">
                   </div>
                 </div>
+                
+                
+                
                 
                 
                 
@@ -130,6 +126,9 @@
                     <input type="text" class="form-control"  th:field="*{precio}" name="precio" id="precio" placeholder="Precio del Producto" required="required">
                   </div>
                 </div>
+                
+                
+                
                 <div class="col-md-3"> 
                   <div class="form-group">
                     <label for="imagen">Imagen</label>
@@ -137,6 +136,9 @@
                   </div>
                 </div>
               </div> 
+              
+              
+              
               <hr>
               <div class="row">
                 <div class="col-md-7"> 
@@ -165,17 +167,17 @@
     	</footer>	
 		
 		<!-- jQuery Plugins -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/slick.min.js"></script>
-		<script src="js/nouislider.min.js"></script>
-		<script src="js/jquery.zoom.min.js"></script>
-		<script src="js/main.js"></script>
+		<script th:src="@{/js/jquery.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/slick.min.js}"></script>
+		<script th:src="@{/js/nouislider.min.js}"></script>
+		<script th:src="@{/js/jquery.zoom.min.js}"></script>
+		<script th:src="@{/js/main.js}"></script>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>    
-    <script src="tinymce/tinymce.min.js"></script>
+	<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>    
+    <script th:src="@{/tinymce/tinymce.min.js}"></script>
     <script>
       
       $(function () {
