@@ -3,10 +3,13 @@ package net.itinajero.controller;
 import java.util.LinkedList;
 import java.util.List;
 
+//import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
 
 import net.itinajero.model.Producto;
 import net.itinajero.service.IProductoService;
@@ -30,26 +33,35 @@ public class homeController {
 	}
 	
 	@GetMapping("/")
-	public String mostrarIndex() {
+	public String mostrarIndex(Model model) {
+		List<Producto> lista = serviceProducto.buscarTodas();
+		model.addAttribute("producto", lista);	
 		
-		 
+		
 		return "index";
 	}
 	
-	@GetMapping("/store")
-	public String mostrarstore() {
-		
-		
-		return "store";
-	}
 	
 	@Autowired
 	private IProductoService serviceProducto;
+	
+	
+	@GetMapping("/store")
+	//  @RequestMapping(value="/store", method=RequestMethod.POST)
+		public String mostrarstore(Model model) {
+			List<Producto> lista = serviceProducto.buscarTodas();
+			model.addAttribute("producto", lista);	
+			
+			return "store";
+		}
+		
+	
 	
 	@GetMapping("/tabla")
 	public String mostrarTabla(Model model) {
 		List<Producto> lista = serviceProducto.buscarTodas();
 		model.addAttribute("producto", lista);
+		
 		return "tabla";
 		
 	}
@@ -57,8 +69,8 @@ public class homeController {
 	@GetMapping("/product")
 	public String mostrarProduct(Model model) {
 		Producto producto = new Producto();
-		producto.setNombre("PRODUCT NAME GOES HERE");
-		producto.setPrecio(980.00);
+		producto.setNombre("PRODUCT NAME GOES HER");
+		producto.setPrecio(90.00);
 		producto.setDescripcion("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
 		
 		model.addAttribute("producto", producto);

@@ -1,5 +1,7 @@
 package net.itinajero.model;
 
+import java.util.Date;
+
 public class Producto {
 	
 	private Integer id;
@@ -11,7 +13,9 @@ public class Producto {
 	private String categoria;
 	private String imagen="no-image.png";
 	private Integer disponible;
+	private Date fecha;
 	private Integer New;
+	
 	
 	public Integer getId() {
 		return id;
@@ -31,15 +35,12 @@ public class Producto {
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
-	
 	public String getDescripcion() {
 		return descripcion;
 	}
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
-	
 	public String getOferta() {
 		return oferta;
 	}
@@ -64,12 +65,17 @@ public class Producto {
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
-	
 	public Integer getDisponible() {
 		return disponible;
 	}
 	public void setDisponible(Integer disponible) {
 		this.disponible = disponible;
+	}
+	public Date getFecha() {
+		return fecha;
+	}
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 	public Integer getNew() {
 		return New;
@@ -81,12 +87,8 @@ public class Producto {
 	public String toString() {
 		return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", descripcion=" + descripcion
 				+ ", oferta=" + oferta + ", descuento=" + descuento + ", categoria=" + categoria + ", imagen=" + imagen
-				+ "]";
+				+ ", disponible=" + disponible + ", fecha=" + fecha + ", New=" + New + "]";
 	}
-	
-	
-	
-	
 	
 	
 	
