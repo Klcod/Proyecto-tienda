@@ -37,31 +37,11 @@
     </head>
 	<body>
 		<!-- HEADER -->
-		<header th:insert="fragments/header :: menu-principal">
-		
-		</header>
+		<div th:insert="fragments/topheader :: subnavegacion-principal"></div>
+		<header th:insert="fragments/header :: menu-principal"></header>
+		<navegacion th:insert="fragments/navegacion :: navegacion-principal"></navegacion>
 		<!-- /HEADER -->
 
-		<!-- NAVIGATION -->
-		<nav id="navigation">
-			<!-- container -->
-			<div class="container">
-				<!-- responsive-nav -->
-				<div id="responsive-nav">
-					<!-- NAV -->
-					<ul class="main-nav nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Hot Deals</a></li>
-						<li><a th:href="@{/categorias/listCategorias}">Categorias</a></li>
-						<li><a th:href="@{/productos/listProduc}">Productos</a></li>
-					</ul>
-					<!-- /NAV -->
-				</div>
-				<!-- /responsive-nav -->
-			</div>
-			<!-- /container -->
-		</nav>
-		<!-- /NAVIGATION -->
 
 		<!-- SECTION -->
 		<div class="section">

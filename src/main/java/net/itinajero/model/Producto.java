@@ -2,20 +2,37 @@ package net.itinajero.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Productos")
 public class Producto {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private String nombre;
 	private Double precio;
 	private String descripcion;
 	private String oferta;
 	private String descuento;
-	private String categoria;
-	private String imagen="no-image.png";
+	private Double preciocondescuento;
+    private String imagen="no-image.png";
 	private Integer disponible;
 	private Date fecha;
-	private Integer New;
-	
+	private String detalles;
+	//@Transient
+	private Integer nuevo;
+	//@Transient
+	@OneToOne
+	@JoinColumn(name="idCategoria")
+	private Categoria categoria;
 	
 	public Integer getId() {
 		return id;
@@ -53,11 +70,11 @@ public class Producto {
 	public void setDescuento(String descuento) {
 		this.descuento = descuento;
 	}
-	public String getCategoria() {
-		return categoria;
+	public Double getPreciocondescuento() {
+		return preciocondescuento;
 	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public void setPreciocondescuento(Double preciocondescuento) {
+		this.preciocondescuento = preciocondescuento;
 	}
 	public String getImagen() {
 		return imagen;
@@ -77,19 +94,31 @@ public class Producto {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
-	public Integer getNew() {
-		return New;
+	public String getDetalles() {
+		return detalles;
 	}
-	public void setNew(Integer new1) {
-		New = new1;
+	public void setDetalles(String detalles) {
+		this.detalles = detalles;
+	}
+	public Integer getNuevo() {
+		return nuevo;
+	}
+	public void setNuevo(Integer nuevo) {
+		this.nuevo = nuevo;
+	}
+	public Categoria getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 	@Override
 	public String toString() {
 		return "Producto [id=" + id + ", nombre=" + nombre + ", precio=" + precio + ", descripcion=" + descripcion
-				+ ", oferta=" + oferta + ", descuento=" + descuento + ", categoria=" + categoria + ", imagen=" + imagen
-				+ ", disponible=" + disponible + ", fecha=" + fecha + ", New=" + New + "]";
+				+ ", oferta=" + oferta + ", descuento=" + descuento + ", preciocondescuento=" + preciocondescuento
+				+ ", imagen=" + imagen + ", disponible=" + disponible + ", fecha=" + fecha + ", detalles=" + detalles
+				+ ", nuevo=" + nuevo + ", categoria=" + categoria + "]";
 	}
-	
 	
 	
 }

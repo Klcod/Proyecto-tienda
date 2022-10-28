@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+
+    <meta charset="utf-8">
 <meta charset="ISO-8859-1">
 <title>Crear Categoria</title>
 <!-- Google font -->
@@ -28,43 +30,46 @@
      
     </header>
 
+<main role="main">     
+      <hr>
+      <div class="container"> 
 
-		<!-- SECTION -->
-		<form th:action="@{/categorias/save}" method="post" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
+        <div class="card">
+          <h4 class="card-header"><strong>Datos de la categoria</strong></h4>              
+          <div class="card-body">
+            <form th:action="@{/categorias/save}" method="post" th:object="${categoria}">
+              <div th:if="${#fields.hasErrors('*')}"class='alert alert-danger' role='alert'>
+				Por favor corrija los siguientes errores:
+				<ul>
+				<li th:each="err : ${#fields.errors('*')}" th:text="${err}"/>
+				</ul>
+			  </div>              
+              <div class="row">
+                <div class="col-md-6"> 
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="hidden" th:field="*{id}" >
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" name="nombre" placeholder="Escriba el nombre de la categoria" required="required">
+                  </div>
+                </div>                
+              </div> 
+              <div class="row">
+                <div class="col-md-6"> 
+                  <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea class="form-control" th:field="*{descripcion}" name="descripcion" id="descripcion" rows="2"></textarea>
+                  </div> 
+                </div>                
+              </div> 
+              <hr>
+              <button type="submit" title="Guardar el registro." class="btn btn-primary">Guardar</button>  
+            </form>
+          </div>
+        </div>
+      </div> <!-- /container -->
 
-					<div class="col-md-7">
-						<!-- Billing Details -->
-						<div class="billing-details">
-							<div class="section-title">
-								<h3 class="title">Nueva Categoria</h3>
-							</div>
-							<div class="form-group">
-								<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba El Nombre de la Categoria" required="required">
-							</div>
-							<div class="row">
-                				<div class="col-md-6"> 
-                 				 	<div class="form-group">
-                    					<label for="descripcion">Descripcion</label>
-                    					<textarea class="form-control" name="descripcion" id="descripcion" rows="5"></textarea>
-                  					</div> 
-                				</div>                
-              				</div> 
-							<div class="form-group">
-								<button type="submit" title="Crear Categoria" class="btn btn-primary">Crear Categoria</button> 
-							</div>
-						</div>
-						<!-- /Billing Details -->
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</form>
-		<!-- /SECTION -->
+    </main>
+
 		
 		<footer th:insert="fragments/footer :: pie-pagina" >
       
