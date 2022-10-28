@@ -1,0 +1,19 @@
+
+<div th:fragment="subnavegacion-principal">
+<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						
+						<li class="active"><a href="/">Home</a></li>
+						<li><a href="#">Usuarios</a></li> 	
+						<li><a th:href="@{/categorias/indexPaginate}">Categorias</a></li>
+						<li><a th:href="@{/productos/indexPaginate}">Productos</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+						<li><a class="btn btn" th:href="@{/signup}">Registrarse</a></li>
+						<li><a class="btn btn" th:href="@{/index}">Ingresar</a>&nbsp;></li>
+					</ul> 
+				</div>
+			</div>
+		</div>
+			<!-- /TOP HEADER -->
