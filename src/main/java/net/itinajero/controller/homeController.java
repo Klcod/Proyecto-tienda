@@ -1,17 +1,59 @@
 package net.itinajero.controller;
 
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
+//import javax.websocket.server.PathParam;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import net.itinajero.model.Perfil;
 import net.itinajero.model.Producto;
+import net.itinajero.model.Usuario;
+import net.itinajero.service.ICategoriaService;
+import net.itinajero.service.IProductoService;
+import net.itinajero.service.IUsuariosService;
 
 @Controller
 public class homeController {
-
+	
+	@Autowired
+	private ICategoriaService serviceCategorias;
+	
+	@Autowired
+	private IProductoService serviceProducto;
+	
+	@Autowired
+    private IUsuariosService serviceUsuarios;
+	
+	
+	@GetMapping("/signup")
+	public String registrarse(Usuario usuario,Model model) {
+		return "usuarios/formRegistro";
+	}  
+	
+	@PostMapping("/signup")
+	public String guardarRegistro(Usuario usuario, RedirectAttributes attributes) {
+		 //Ejercicio.
+		usuario.setEstatus(1);
+		usuario.setFechaRegistro(new Date());
+		 
+		 Perfil perfil = new Perfil();
+		 perfil.setId(3);
+		 usuario.agregar(perfil);
+		 
+		serviceUsuarios.guardar(usuario);
+		attributes.addFlashAttribute("msg", "El registrado fue guardado exitosamente");		
+		
+		return "redirect:/usuarios/index";
+	}
 	@GetMapping("/listado")
 	public String mostrarlistado(Model model) {
 		List<String> producto = new LinkedList<String>();
@@ -28,30 +70,43 @@ public class homeController {
 	}
 	
 	@GetMapping("/")
-	public String mostrarIndex() {
-		
-		 
+	public String mostrarIndex(Model model) {	
 		return "index";
 	}
+		@ModelAttribute
+	public void setGenericos(Model model) {
+			model.addAttribute("producto", serviceProducto.buscarDestacadas());
+	}
+	
+	
+	
+	
 	
 	@GetMapping("/store")
-	public String mostrarstore() {
+	//  @RequestMapping(value="/store", method=RequestMethod.POST)
+		public String mostrarstore(Model model) {
+			List<Producto> lista = serviceProducto.buscarTodas();
+			model.addAttribute("producto", lista);	
+			
+			return "store";
+		}
 		
-		
-		return "store";
-	}
+	
 	
 	@GetMapping("/tabla")
 	public String mostrarTabla(Model model) {
+		List<Producto> lista = serviceProducto.buscarTodas();
+		model.addAttribute("producto", lista);
 		
 		return "tabla";
+		
 	}
 	
 	@GetMapping("/product")
 	public String mostrarProduct(Model model) {
 		Producto producto = new Producto();
-		producto.setNombre("PRODUCT NAME GOES HERE");
-		producto.setPrecio(980.00);
+		producto.setNombre("PRODUCT NAME GOES HER");
+		producto.setPrecio(90.00);
 		producto.setDescripcion("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
 		
 		model.addAttribute("producto", producto);

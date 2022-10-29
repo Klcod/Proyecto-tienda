@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8">
+<meta charset="ISO-8859-1">
+<title>Crear Categoria</title>
+<!-- Google font -->
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+ 		<!-- Bootstrap -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+
+ 		<!-- Slick -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/slick.css}"/>
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/slick-theme.css}"/>
+
+ 		<!-- nouislider -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/nouislider.min.css}"/>
+
+ 		<!-- Font Awesome Icon -->
+ 		<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+
+ 		<!-- Custom stlylesheet -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/style.css}"/>
+
+</head>
+<body>
+	 <header th:insert="fragments/header :: menu-principal">
+     
+    </header>
+
+<main role="main">     
+      <hr>
+      <div class="container"> 
+
+        <div class="card">
+          <h4 class="card-header"><strong>Datos de la categoria</strong></h4>              
+          <div class="card-body">
+            <form th:action="@{/categorias/save}" method="post" th:object="${categoria}">
+              <div th:if="${#fields.hasErrors('*')}"class='alert alert-danger' role='alert'>
+				Por favor corrija los siguientes errores:
+				<ul>
+				<li th:each="err : ${#fields.errors('*')}" th:text="${err}"/>
+				</ul>
+			  </div>              
+              <div class="row">
+                <div class="col-md-6"> 
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="hidden" th:field="*{id}" >
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" name="nombre" placeholder="Escriba el nombre de la categoria" required="required">
+                  </div>
+                </div>                
+              </div> 
+              <div class="row">
+                <div class="col-md-6"> 
+                  <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea class="form-control" th:field="*{descripcion}" name="descripcion" id="descripcion" rows="2"></textarea>
+                  </div> 
+                </div>                
+              </div> 
+              <hr>
+              <button type="submit" title="Guardar el registro." class="btn btn-primary">Guardar</button>  
+            </form>
+          </div>
+        </div>
+      </div> <!-- /container -->
+
+    </main>
+
+		
+		<footer th:insert="fragments/footer :: pie-pagina" >
+      
+    	</footer>	
+		
+		<!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+</body>
+</html>

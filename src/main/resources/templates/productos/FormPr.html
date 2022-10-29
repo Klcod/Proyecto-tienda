@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Crear Producto</title>
+<!-- Google font -->
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+ 		<!-- Bootstrap -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+
+ 		<!-- Slick -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/slick.css}"/>
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/slick-theme.css}"/>
+
+ 		<!-- nouislider -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/nouislider.min.css}"/>
+
+ 		<!-- Font Awesome Icon -->
+ 		<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+
+ 		<!-- Custom stlylesheet -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/style.css}"/>
+ 		
+ 		 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/css/jumbotron.css" rel="stylesheet">
+    <link href="bootstrap/css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" >
+
+</head>
+<body>
+	 <header th:insert="fragments/header :: menu-principal">
+     
+    </header>
+
+
+		<main role="main">     
+      <hr>
+      <div class="container"> 
+
+        <div class="card">
+          <h4 class="card-header"><strong>Datos del Producto</strong></h4>              
+          <div  class="card-body  ">
+          
+            <form th:action="@{/productos/save}" method="post" th:object="${producto}" enctype="multipart/form-data">    
+            
+            <div th:if="${#fields.hasErrors('*')}" class='alert alert-danger' role='alert'>
+            Por favor corrija los siguientes errores:
+            <ul>
+            <li th:each="err : ${#fields.errors('*')}" th:text="${err}" />
+            </ul>
+            </div>
+            
+                      
+              <div class="row">
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="hidden" th:field="*{id}">
+                    <input type="hidden" th:field="*{imagen}">
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" name="nombre" placeholder="Nombre del Producto" required="required">
+                  </div>
+                </div>
+                <div class="col-md-3"> 
+                 <div class="form-group">
+                    <label for="oferta">Descuento</label>
+                    <input type="text" class="form-control" name="descuento"  th:field="*{descuento}"  id="descuento" placeholder="descuento" required="required">
+                  </div>
+                </div>   
+                 
+                
+                
+                 <div class="col-md-5"> 
+                  <div class="form-check">
+                    <label class="form-check-label" for="disponible0"></label><br>
+                    <input class="form-check-input" type="radio" th:field="*{disponible}" name="disponible" id="disponible" value="1" checked="checked">
+                    <label class="form-check-label" for="disponible0">Disponible</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" th:field="*{disponible}" name="disponible" id="disponible" value="0">
+                    <label class="form-check-label" for="disponible1">No Disponible</label>
+                  </div>
+                </div> 
+              </div>    
+              
+              
+             
+                  
+              
+              
+              <div class="row">
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select class="form-control" name="categoria" id="categoria" >
+                      <option th:each="categoria : ${categorias}" 
+                      th:value="${categoria.id}"
+                       th:text="${categoria.nombre}"></option>
+                    </select>
+                  </div>
+                </div>
+
+              
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="fecha">Fecha de Publicacion</label>
+                    <input type="text" class="form-control"  th:field="*{fecha}"  name="fecha" id="fecha" placeholder="Fecha de publicacion" required="required">
+                  </div>  
+                </div>
+               
+                 <div class="col-md-5"> 
+                  <div class="form-check">
+                    <label class="form-check-label" for="nuevo0"></label><br>
+                    <input class="form-check-input" type="radio" th:field="*{nuevo}" name="nuevo" id="nuevo" value="1" checked="checked">
+                    <label class="form-check-label" for="nuevo0">Nuevo</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" th:field="*{nuevo}" name="nuevo" id="nuevo" value="0">
+                    <label class="form-check-label" for="nuevo1">No Nuevo</label>
+                  </div>
+                </div> 
+                
+                 </div>    
+              <div class="row">
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="salario">Oferta</label>
+                    <input type="text" class="form-control"  th:field="*{oferta}" name="precio" id="oferta" placeholder="oferta" required="required">
+                  </div>
+                </div>
+                
+                 <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="preciocondescuento">Precio con Descuento</label>
+                    <input type="text" class="form-control"  th:field="*{preciocondescuento}" name="preciocondescuento" id="oferta" placeholder="precio con descuento" required="required">
+                  </div>
+                </div>
+                
+              </div>    
+              <div class="row">
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="salario">Precio</label>
+                    <input type="text" class="form-control"  th:field="*{precio}" name="precio" id="precio" placeholder="Precio del Producto" required="required">
+                  </div>
+                </div>
+                
+                
+                
+                <div class="col-md-3"> 
+                  <div class="form-group">
+                    <label for="archivoImagen">Imagen</label>
+                    <input type="file" class="form-control-file" name="archivoImagen" id="archivoImagen">
+                  </div>
+                </div>
+              </div> 
+              
+              
+              
+              <hr>
+              <div class="row">
+                <div class="col-md-7"> 
+                  <div class="form-group">
+                    <label for="descripcion"><strong>Descripcion</strong></label>          
+                    <textarea class="form-control"  th:field="*{descripcion}" name="descripcion" id="descripcion" rows="7"></textarea>
+                  </div> 
+                </div> 
+                <div class="col-md-3">
+                  <label for="imagen">Imagen/Logo</label>
+                  <img class="rounded mx-auto d-block" th:src="@{/product/{img} (img=${producto.imagen})}" alt="Generic placeholder image" width="200" height="200">            
+                </div>
+              </div> 
+              <button type="submit" class="btn btn-primary ">Guardar</button>  
+            </form>
+          </div>
+        </div>
+      </div> <!-- /container -->
+
+    </main>
+    
+    </br>
+			
+		<footer th:insert="fragments/footer :: pie-pagina" >
+      
+    	</footer>	
+		
+		<!-- jQuery Plugins -->
+		<script th:src="@{/js/jquery.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/slick.min.js}"></script>
+		<script th:src="@{/js/nouislider.min.js}"></script>
+		<script th:src="@{/js/jquery.zoom.min.js}"></script>
+		<script th:src="@{/js/main.js}"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>    
+    <script th:src="@{/tinymce/tinymce.min.js}"></script>
+    <script>
+      
+      $(function () {
+          $("#fecha").datepicker({dateFormat: 'dd-mm-yy'});
+        }
+      );
+      
+      
+      tinymce.init({
+          selector: '#descripcion',
+          plugins: "textcolor, table lists code",
+          toolbar: " undo redo | bold italic | alignleft aligncenter alignright alignjustify \n\
+                    | bullist numlist outdent indent | forecolor backcolor table code"
+      });
+      
+      
+      
+      
+      
+</script>
+</body>
+</html>
