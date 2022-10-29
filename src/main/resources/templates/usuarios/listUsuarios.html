@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Listado de Usuarios</title>
+  <!-- Google font -->
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+ 		<!-- Bootstrap -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+
+ 		<!-- Slick -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/slick.css}"/>
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/slick-theme.css}"/>
+
+ 		<!-- nouislider -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/nouislider.min.css}"/>
+
+ 		<!-- Font Awesome Icon -->
+ 		<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+
+ 		<!-- Custom stlylesheet -->
+ 		<link type="text/css" rel="stylesheet" th:href="@{/css/style.css}"/>
+
+</head>
+<body>
+	 <header th:insert="fragments/header :: menu-principal">
+     
+    </header>
+
+    <main role="main">     
+      <hr>
+      <div class="container"> 
+
+        <div class="card">
+          <h4 class="card-header"><strong>Listado de Usuarios</strong></h4>              
+          <div class="card-body">            
+            <hr>
+            <div th:if="${msg != null}" class='alert alert-success' th:text="${msg}" role='alert'></div>
+            <table class="table table-hover">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Username</th>                  
+                  <th scope="col">Email</th>
+                  <th scope="col">Estatus</th>
+                  <th scope="col">Operaciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  th:each="usuarios : ${usuarios}">
+                  <td th:text="${usuarios.nombre}"></td>
+                  <td th:text="${usuarios.username}"></td>                  
+                  <td th:text="${usuarios.email}"></td>
+                  <td th:text="${usuarios.estatus==1 ? 'Activo' : 'No activo' }"></td>
+                  <td>
+                    <a th:href="@{/usuarios/delete/{id} (id=${usuarios.id}) }" onclick="confirm('¿Estas seguro?')" class="btn btn-success btn-sm" role="button" title="Eliminar"><i class="fas fa-trash" aria-hidden="true"></i></a>
+                    <span> 
+                      <a href="/usuarios/lock/3" onclick="confirm('¿Quiere bloquear el acceso al usuario?')" class="btn btn-success btn-sm" role="button" title="Bloquear el acceso al sistema para este usuario."><i class="fas fa-lock" aria-hidden="true"></i></a>
+					</span>
+                    
+                  </td>
+                </tr>
+                      
+              </tbody>
+            </table>
+            
+          </div>
+        </div>
+      </div> <!-- /container -->
+
+    </main>
+
+    <footer th:insert="fragments/footer :: pie-pagina" >
+      
+    	</footer>	
+		
+		<!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>   
+  </body>
+</html>
