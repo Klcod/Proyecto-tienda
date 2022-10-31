@@ -1,0 +1,59 @@
+<link
+	href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700"
+	rel="stylesheet">
+
+<!-- Bootstrap -->
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+<!-- Slick -->
+<link type="text/css" rel="stylesheet" href="css/slick.css" />
+<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+
+<!-- nouislider -->
+<link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
+
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!-- Custom stlylesheet -->
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<header>
+	<div id="header">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- LOGO -->
+				<div class="col-md-3">
+					<div class="header-logo">
+						<a href="/" class="logo"> <img src="./img/logo.png" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- /LOGO -->
+	<!-- TOP HEADER -->
+	<!-- /MAIN HEADER -->
+</header>
+
+<h1 class="h1 mb-1 font-weight-normal">Bienvenido </h1>
+<h2 class="h1 mb-3 font-weight-normal">Vamos a Iniciar Sesion</h2>
+
+<form name="form" th:action="@{/login}" method="POST" >
+	Usuario:<br> <input type="text" class="form-control" name="username"><br>
+	Password:<br> <input type="password" class="form-control" name="password"><br>
+	<input name="submit" type="submit" value="Ingresar">
+</form>
+
+
+
+
+<footer id="footer" th:insert="fragments/footer :: pie-pagina">
+
+</footer>
+
+
+<script src="js/bootstrap.min.js"></script>

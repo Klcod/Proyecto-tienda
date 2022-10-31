@@ -1,20 +1,6 @@
 
 		<!-- HEADER -->
-<div th:fragment="menu-principal">
-	<div id="top-header">
-				<div class="container">
-					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- /TOP HEADER -->
+	<div th:fragment="menu-principal">
 
 			<!-- MAIN HEADER -->
 			<div id="header">
@@ -32,18 +18,6 @@
 						</div>
 						<!-- /LOGO -->
 
-						<!-- SEARCH BAR -->
-						<div class="col-md-6">
-							<div class="header-search">
-								<form>
-								<!--  	<input class="input" type="text" name="categoria" id="categoria" th:value="${categoria}" placeholder="Buscar">-->
-									<input type="text" class="input" id="search" placeholder="Type to search table...">
-									<button class="search-btn">Buscar</button>
-								</form>
-							</div>
-						</div>
-						<!-- /SEARCH BAR -->
-
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
@@ -56,6 +30,10 @@
 									</a>
 								</div>
 								<!-- /Wishlist -->
+
+
+
+
 
 								<!-- Cart -->
 								<div class="dropdown">
@@ -100,6 +78,10 @@
 								</div>
 								<!-- /Cart -->
 
+
+
+
+
 								<!-- Menu Toogle -->
 								<div class="menu-toggle">
 									<a href="#">
@@ -119,3 +101,47 @@
 	
 	</div>
 		
+		
+		<div th:fragment="navegacion-principal">
+<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li class="active"><a href="/">Home</a></li>
+						<li><a th:href="@{/usuarios/index}">Usuarios</a></li> 	
+						<li><a th:href="@{/categorias/indexPaginate}">Categorias</a></li>
+						<li><a th:href="@{/productos/indexPaginate}">Productos</a></li>
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		</div>
+		
+		<div th:fragment="subnavegacion-principal">
+<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						
+						<li class="active"><a href="/">Home</a></li>
+						<li><a th:href="@{/usuarios/index}">Usuarios</a></li> 	
+						<li><a th:href="@{/categorias/indexPaginate}">Categorias</a></li>
+						<li><a th:href="@{/productos/indexPaginate}">Productos</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+						<li><a class="btn btn" th:href="@{/signup}">Registrarse</a></li>
+						<li><a class="btn btn" th:href="@{/logout}">Salir</a>&nbsp;</li>
+						<li><a class="btn btn" th:href="@{/index}">Ingresar</a>&nbsp;</li>
+					</ul> 
+				</div>
+			</div>
+		</div>
+			<!-- /TOP HEADER -->
+			
+			
+			
