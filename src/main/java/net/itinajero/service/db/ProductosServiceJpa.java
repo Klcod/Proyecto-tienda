@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -41,7 +42,7 @@ public class ProductosServiceJpa implements IProductoService {
 
 	@Override
 	public List<Producto> buscarDestacadas() {
-		return productosRepo.findByNuevoAndDisponibleOrderByIdDesc(2, 2);
+		return productosRepo.findByNuevoAndDisponibleOrderByIdDesc(1,1);
 	}
 
 	@Override
@@ -52,6 +53,13 @@ public class ProductosServiceJpa implements IProductoService {
 	@Override
 	public Page<Producto> buscarTodas(Pageable page) {
 		return productosRepo.findAll(page);
+	}
+
+	@Override
+	public List<Producto> buscarByExample(Example<Producto> example) {
+		// TODO Auto-generated method stub
+		return productosRepo.findAll(example);
+	
 	}
 
 }

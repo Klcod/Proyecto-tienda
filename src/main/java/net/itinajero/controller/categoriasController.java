@@ -1,7 +1,6 @@
 package net.itinajero.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -54,7 +53,7 @@ public class categoriasController {
 		// Guadamos el objeto categoria en la bd
 		serviceCategorias.guardar(categoria);
 		attributes.addFlashAttribute("msg", "Los datos de la categoría fueron guardados!");		
-		return "redirect:/categorias/index";
+		return "redirect:/categorias/indexPaginate";
 	}
 
 	@GetMapping("/delete/{id}")

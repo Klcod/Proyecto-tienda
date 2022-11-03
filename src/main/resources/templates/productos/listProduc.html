@@ -29,11 +29,11 @@
  		<!-- Custom stlylesheet -->
  		<link type="text/css" rel="stylesheet" th:href="@{/css/style.css}"/> 
   </head>
-
+   
   <body>
-    <!-- HEADER -->
-<div th:insert="fragments/topheader :: subnavegacion-principal"></div>
- <!-- HEADER -->
+  
+ 
+    <div th:insert="fragments/topheader :: subnavegacion-principal"></div>
 
     <main role="main">     
       <hr>
@@ -53,9 +53,11 @@
                   <th scope="col">Categoría</th>
                   <th scope="col">Nombre</th>                  
                   <th scope="col">Fecha Pub.</th>
+                   <th scope="col">Nuevo</th>
                   <th scope="col">Oferta</th>
                   <th scope="col">Disponible</th>
                   <th scope="col">Descuento</th>
+                  <th scope="col">PrecioDescuento</th>
                   <th scope="col">Operaciones</th>
                 </tr>
               </thead>
@@ -64,9 +66,11 @@
                  <td th:text="${producto.categoria.nombre}"></td>    
                   <td th:text="${producto.nombre}"></td>                  
                   <td th:text="${producto.fecha}"></td>
+                   <td th:text="${producto.nuevo==1 ? 'SI' : 'NO'}"></td>
                   <td th:text="${producto.oferta}"></td>
                   <td th:text="${producto.disponible==1 ? 'SI' : 'NO' }"></td>
                   <td th:text="${producto.descuento}"></td>    
+                  <td th:text="${producto.preciocondescuento}"></td>  
                   <td>
                     <a th:href="@{/productos/edit/{id} (id=${producto.id}) }" class="btn btn-danger btn-sm" role="button" title="Editar el registro."><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                     <a th:href="@{/productos/delete/{id} (id=${producto.id}) }" onclick="confirm('¿Estas seguro?')" class="btn btn-danger btn-sm" role="button" title="Eliminar el registro."><i class="fas fa-trash" aria-hidden="true"></i></a>
@@ -85,10 +89,11 @@
       </div> <!-- /container -->
 
     </main>
+<br><br>
 
-    <footer th:insert="fragments/footer :: pie-pagina" >
-      
-    	</footer>	
+    <footer id="footer" th:insert="fragments/footer :: pie-pagina">
+    </footer>
+  
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -9,7 +9,7 @@
 
 <title>Formulario de registro</title>
  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
  		<!-- Bootstrap -->
  		<link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
 
@@ -29,6 +29,21 @@
 </head>
 <body>
 <!-- HEADER -->
+<div id="header">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<!-- LOGO -->
+				<div class="col-md-3">
+					<div class="header-logo">
+						<a href="/" class="logo"> <img src="./img/logo.png" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <div th:insert="fragments/topheader :: subnavegacion-principal"></div>
  <!-- HEADER -->
     <main role="main">     
@@ -74,9 +89,23 @@
 
     </main>
 <br><br>
-  
- 
-		<footer th:insert="fragments/footer :: pie-pagina" ></footer>
+ <br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+	<div id="bottom-footer" class="section">
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class=" text-center">
+							
+						</div>
+					</div>
+						<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
 
    <!-- jQuery Plugins -->
 		<script src="js/jquery.min.js"></script>

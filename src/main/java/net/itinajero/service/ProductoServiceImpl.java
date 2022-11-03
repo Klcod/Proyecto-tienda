@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -265,6 +266,11 @@ public ProductoServiceImpl() {
 		}
 		@Override
 		public Page<Producto> buscarTodas(Pageable page) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		@Override
+		public List<Producto> buscarByExample(Example<Producto> example) {
 			// TODO Auto-generated method stub
 			return null;
 		}

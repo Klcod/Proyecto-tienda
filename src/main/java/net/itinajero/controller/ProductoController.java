@@ -1,6 +1,5 @@
 package net.itinajero.controller;
 
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -84,7 +83,7 @@ public class ProductoController {
 			serviceProducto.guardar(producto);
 			attributes.addFlashAttribute("msg", "Registro Guardado");
 			System.out.println("Producto: " + producto);
-			return "redirect:/productos/index";
+			return "redirect:/productos/indexPaginate";
 		}
 	
 			@GetMapping("/listProduc")

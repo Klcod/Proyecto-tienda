@@ -10,7 +10,7 @@
 	<h1 class="text-light bg-dark">Listado de los productos ELECTRO</h1>
 	
 	<div class="form-group">
- <input type="text" class="form-control pull-right" style="width:20%" id="search" placeholder="Type to search table...">
+ <input type="text" class="form-control pull-right" style="width:20%" placeholder="Type to search table...">
  <button type="submit">Buscar</button>
  
 </div>
@@ -47,10 +47,7 @@
     <span th:if="${producto.disponible==1}" class="badge bg-success">Si</span>
     <span th:unless="${producto.disponible==1}" class="badge bg-danger">No</span>
     </td>
-    <td>
-    <span th:if="${producto.New==1}" class="badge bg-success">Si</span>
-    <span th:unless="${producto.New==1}" class="badge bg-danger">No</span>
-    </td>
+    
     <td>
     <a th:href="@{/productos/view/{id} (id=${producto.id}) }" class="btn btn-success">Detalle</a>
     </td>
@@ -62,23 +59,6 @@
 </table>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-<script>
- // Write on keyup event of keyword input element
- $(document).ready(function(){
- $("#search").keyup(function(){
- _this = this;
- // Show only matching TR, hide rest of them
- $.each($("#mytable tbody tr"), function() {
- if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
- $(this).hide();
- else
- $(this).show();
- });
- });
-});
-</script>
 
 
 </body>

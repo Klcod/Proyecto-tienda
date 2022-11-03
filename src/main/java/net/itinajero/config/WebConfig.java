@@ -8,6 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) { 
 		//registry.addResourceHandler("/logos/**").addResourceLocations("file:c:/empleos/img-vacantes/"); // Windows
-		registry.addResourceHandler("/product/**").addResourceLocations("file:C:/tmd/productos/img-productos/");
+		registry.addResourceHandler("/product/**").addResourceLocations("file:C:/productos/img-productos/");
 		}
 }

@@ -40,26 +40,32 @@
           </div>
           <div class="col-md-9">
             <div class="card">
+            <form th:action="@{/cart}" method="post"> 
               <h4 class="card-header">Nombre del producto: <strong th:text="${producto.nombre}"></strong></h4>              
               <div class="card-body">
                 <h5 class="card-title"><strong>Categoria: </strong> <span th:text="${producto.categoria.nombre}"></span></h5>
                 <h6 class="card-title"><strong>Descuento: </strong> <span th:text="${producto.descuento}"> </span></h6>                
                 <h6 class="card-title"><strong>Precio: </strong><span th:text="${producto.precio}"></span></h6>
-               <p class="card-text" th:text="${producto.descripcion}"></p>
+               <p class="card-text" ><strong>Descripcion: </strong> <span th:utext="${producto.descripcion}"></span></p>
                      
                      <div class="card bg-light mb-3" >
                   <div class="card-body">
                     <h5 class="card-title">Detalles del producto</h5>
                     <p class="card-text" th:utext="${producto.detalles}"></p>
              
+             
                   </div>
                 </div>                        
-              </div>
+              </div> 
+              <button class="btn btn-primary" type="submit" >Comprar</button>
+               </form>
             </div>  
           </div>
+          			
+          
         </div>
-
       </div>
+     
     </main>
 
     <footer th:insert="fragments/footer :: pie-pagina">
@@ -73,5 +79,6 @@
 		<script src="js/nouislider.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
+		
   </body>
 </html>

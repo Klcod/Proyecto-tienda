@@ -17,4 +17,6 @@ public interface ProductosRepository extends JpaRepository<Producto, Integer> {
 	List<Producto> findByPrecioBetweenOrderByPrecioDesc(double s1, double s2);
 	
 	List<Producto> findByDisponibleIn(int[] disponible);
+	
+	
 }
