@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		   <link rel="icon" href="favicon.ico">
+		   
 <title>Crear Prdocuto</title>
+ <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
 <!-- Google font -->
+   
  		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
  		<!-- Bootstrap -->
@@ -26,10 +32,11 @@
 
   <body>
 
-    <header th:insert="fragments/header :: menu-principal">
-     
-    </header>
-
+<!-- HEADER -->
+		<div th:insert="fragments/topheader :: subnavegacion-principal"></div>
+		<navegacion th:insert="fragments/navegacion :: navegacion-principal"></navegacion>
+		<!-- /HEADER -->
+		
     <main role="main">
       <hr>
       <div class="container"> 
@@ -50,24 +57,24 @@
                      
                      <div class="card bg-light mb-3" >
                   <div class="card-body">
-                    <h5 class="card-title">Detalles del producto</h5>
-                    <p class="card-text" th:utext="${producto.detalles}"></p>
+                    <!--  <h5 class="card-title">Detalles del producto</h5>
+                    <p class="card-text" th:utext="${producto.detalles}"></p>-->
              
              
                   </div>
                 </div>                        
               </div> 
-              <button class="btn btn-primary" type="submit" >Comprar</button>
+              <!--  <button class="btn btn-primary" type="submit" >Comprar</button>-->
                </form>
             </div>  
           </div>
-          			
-          
         </div>
       </div>
      
     </main>
-
+<br><br>
+<br><br>
+<br><br>
     <footer th:insert="fragments/footer :: pie-pagina">
       
     </footer>
